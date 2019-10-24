@@ -1,0 +1,32 @@
+<div class="jumbotron text-center">
+	<div class="overlay">
+	</div>
+	<div class="background-image">
+	</div>
+	<div class="caption">
+		<h1>News Scraper</h1>
+		<p>New York Times Edition</p>
+	</div>
+</div>
+
+<h2>Save the Article you need to get to later</h2>
+<div class="container-fluid">
+	<ul>
+		{{#each articles}}
+		<li>
+			<div class="card">
+				<div class="card-header">
+					<h3>
+						<a class="article-link" target="_blank" rel="noopener noreferrer"
+							href={{this.link}}>{{this.title}}</a>
+						<a class="btn btn-success save" data-link={{this.link}} data-title="{{this.title}}" data-body="{{this.body}}">Save Article</a>
+					</h3>
+				</div>
+				<div class="card-body">
+					{{this.body}}
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+</div>
