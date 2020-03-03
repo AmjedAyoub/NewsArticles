@@ -26,7 +26,7 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 // mongoose.connect("mongodb://localhost/NewsScraperDBtest", { useNewUrlParser: true });
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds339348.mlab.com:39348/heroku_bcxd71m4";
 mongoose.connect(MONGODB_URI);
 
 // Data
