@@ -185,6 +185,7 @@ app.get("/deleteNote/:id", function(req, res) {
                 // Otherwise, send the mongojs response to the browser
                 // This will fire off the success function of the ajax request
                 console.log(removed);
+                res.json(removed);
             }
         }
     );

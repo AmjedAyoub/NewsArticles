@@ -93,18 +93,16 @@ $(document).on("click", "#addNote", function() {
 $(document).on("click", "#deleteNote", function() {
     
     var thisId = $(this).attr("data-id");
+    console.log(">>>>>>>>  "+thisId);
     $.ajax({
         type: "GET",
-        url: "/deleteNote/" + thisId,
-        success: function(response)  {
-            // Log any errors from mongojs
-            
-            // console.log(response);
-            // window.location.href = "/saved";        
-            $("#notes").empty();
-            $("#body").val("");
-            $("#modalNotes").modal("hide");
-            // location.reload();
-        }
+        url: "/deleteNote/" + thisId
+    }).then(function (data){
+        // Log the response
+        console.log("2>>>>>>>>  "+data);
+        // Empty the notes section
+        $("#notes").empty();
+        $("#body").val("");
+        $("#modalNotes").modal("hide");
     });
 });
