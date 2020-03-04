@@ -43,7 +43,8 @@ app.get("/clear", function(req, res) {
 
 app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
+    // axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
+    axios.get("https://old.reddit.com/r/webdev/").then(function(response) {
         // console.log(response.data);
         // Then, we load that into cheerio and save it to $ for a shorthand selector
         var newData= response.data;
