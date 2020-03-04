@@ -41,12 +41,13 @@ app.get("/clear", function(req, res) {
     res.json(articles);
 });
 
-app.get("/scrape", function(req, res) {
+app.get("/scrape", async function(req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
+    await axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
         // console.log(response.data);
         // Then, we load that into cheerio and save it to $ for a shorthand selector
-        var $ = cheerio.load(response.data);
+        var newData= response.data;
+        var $ = cheerio.load(newData);
         articles = [];
         // Now, we grab every h2 within an article tag, and do the following:
         $("article").each(function(i, element) {
@@ -77,6 +78,7 @@ app.get("/scrape", function(req, res) {
     }).catch(function (error) {
         console.log(error);
     });
+              
 });
 
 app.post("/articles", function(req, res) {
