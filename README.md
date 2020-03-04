@@ -1,7 +1,7 @@
 # NewsArticles
 
 ## Overview
-Web app that lets users view and leave comments on the latest news that had been scrape news from another site [GeekWire](https://www.geekwire.com/), By using Mongoose and Cheerio.
+Web app that lets users view and leave comments on the latest news that had been scraped from another site [GeekWire](https://www.geekwire.com/), By using Mongoose and Cheerio.
 
 
 
