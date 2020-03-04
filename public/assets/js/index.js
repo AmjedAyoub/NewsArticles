@@ -1,4 +1,5 @@
 $(document).on("click", ".scrape-new", function() {
+    console.log("k")
     $.ajax({
         method: "GET",
         url: "/scrape"

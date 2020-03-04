@@ -6,7 +6,6 @@ var mongojs = require("mongojs");
 var axios = require("axios");
 var cheerio = require("cheerio");
 var db = require("./models");
-
 var app = express();
 
 // Set the port of our application
@@ -53,7 +52,6 @@ app.get("/scrape", function(req, res) {
         $("article").each(function(i, element) {
             // Save an empty result object
             var result = {};
-
             // Add the text and href of every link, and save them as properties of the result object
             result.title = $(this)
                 .children("div").children("h3").children("a")
@@ -72,9 +70,9 @@ app.get("/scrape", function(req, res) {
 
         // Send a message to the client        
         // res.render("index", { articles: articles });
-        // res.send("Scrape Complete");
-        console.log(articles);
-        res.json(articles);
+        res.send("Scrape Complete");
+        // console.log(articles);
+        // res.json(articles);
 
     });
 });
