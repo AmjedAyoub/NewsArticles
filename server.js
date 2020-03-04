@@ -41,39 +41,39 @@ app.get("/clear", function(req, res) {
     res.json(articles);
 });
 
-app.get("/scrape", async function(req, res) {
+app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with axios
-    await axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
+    axios.get("https://www.seattletimes.com/seattle-news/politics/").then(function(response) {
         // console.log(response.data);
         // Then, we load that into cheerio and save it to $ for a shorthand selector
         var newData= response.data;
-        var $ = cheerio.load(newData);
-        articles = [];
-        // Now, we grab every h2 within an article tag, and do the following:
-        $("article").each(function(i, element) {
-            // Save an empty result object
-            var result = {};
-            // Add the text and href of every link, and save them as properties of the result object
-            result.title = $(this)
-                .children("div").children("h3").children("a")
-                .text();
-            result.link = $(this)
-                .children("div").children("h3").children("a")
-                .attr("href");
-            result.body = $(this)
-                .children("div").children("p")
-                .text();
-            // console.log(result);
-            if (result.title) {
-                articles.push(result);
-            }
-        });
+        // var $ = cheerio.load(newData);
+        // articles = [];
+        // // Now, we grab every h2 within an article tag, and do the following:
+        // $("article").each(function(i, element) {
+        //     // Save an empty result object
+        //     var result = {};
+        //     // Add the text and href of every link, and save them as properties of the result object
+        //     result.title = $(this)
+        //         .children("div").children("h3").children("a")
+        //         .text();
+        //     result.link = $(this)
+        //         .children("div").children("h3").children("a")
+        //         .attr("href");
+        //     result.body = $(this)
+        //         .children("div").children("p")
+        //         .text();
+        //     // console.log(result);
+        //     if (result.title) {
+        //         articles.push(result);
+        //     }
+        // });
 
         // Send a message to the client        
         // res.render("index", { articles: articles });
         // res.send("Scrape Complete");
         // console.log(articles);
-        res.json(articles);
+        res.json(newData);
 
     }).catch(function (error) {
         console.log(error);
