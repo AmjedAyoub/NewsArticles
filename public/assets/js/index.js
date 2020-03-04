@@ -5,7 +5,7 @@ $(document).on("click", ".scrape-new", function() {
         url: "/scrape"
     }).then(function(res) {
         console.log( "hi "+res)
-        // location.reload();
+        location.reload();
     })
 })
 
