@@ -66,8 +66,6 @@ app.get("/scrape", function(req, res) {
             if (result.title) {
                 articles.push(result);
             }
-        }).catch(function (error) {
-            console.log(error);
         });
 
         // Send a message to the client        
@@ -76,6 +74,8 @@ app.get("/scrape", function(req, res) {
         // console.log(articles);
         res.json(articles);
 
+    }).catch(function (error) {
+        console.log(error);
     });
 });
 
