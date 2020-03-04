@@ -43,7 +43,7 @@ app.get("/clear", function(req, res) {
 
 app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://www.geekwire.com/#news-tabs").then(function(response) {
+    axios.get("https://www.geekwire.com/cloud/").then(function(response) {
         // console.log(response.data);
         // Then, we load that into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(response.data);
