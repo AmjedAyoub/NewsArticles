@@ -1,8 +1,8 @@
 # NewsArticles
 
 ## Overview
-Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat. Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.\
-Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page with a `Delete it!` button. The app will store every burger in a database, whether devoured or not.
+Web app that lets users view and leave comments on the latest news that had been scrape news from another site [GeekWire](https://www.geekwire.com/), By using Mongoose and Cheerio.
+
 
 
 ## Getting Started
@@ -13,31 +13,38 @@ Git clone the repository to your local machine:
 
 HTTPS:
 ```
-https://github.com/AmjedAyoub/burger.git
+https://github.com/AmjedAyoub/NewsArticles.git
 ```
 SSH:
 ```
-git@github.com:AmjedAyoub/burger.git
+git@github.com:AmjedAyoub/NewsArticles.git
 ```
 
 ## Screen-shots
 
-### Home Page
+### Scraping Articles Page
 ![image](./img/1.PNG)
+
+### Saved Articles Page
+![image](./img/2.PNG)
+
+### Article Notes Page
+![image](./img/3.PNG)
 
 ## Technologies & Tools
 * HTML  
 * CSS
 * JavaScript
-* MySQL 
+* Mongoose 
 * Node
 * Express
-* Handlebars 
-* Homemade ORM, [read more](./config/orm.js) 
+* Express-Handlebars
+* Cheerio 
+* Axios
 
 ## Links
-This application is deployed on Heroku, [Try it yourself](https://burger-da-burger.herokuapp.com/).\
-This application is published on [GitHub](https://github.com/AmjedAyoub/burger).
+This application is deployed on Heroku, [Try it yourself](https://cloud-news-scraper.herokuapp.com/).\
+This application is published on [GitHub](https://github.com/AmjedAyoub/NewsArticles).
 
 ## Authors
-See contribution history [here](https://github.com/AmjedAyoub/burger/graphs/contributors).
+See contribution history [here](https://github.com/AmjedAyoub/NewsArticles/graphs/contributors).
