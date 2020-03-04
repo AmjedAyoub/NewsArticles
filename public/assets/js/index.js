@@ -4,7 +4,7 @@ $(document).on("click", ".scrape-new", function() {
         method: "GET",
         url: "/scrape"
     }).then(function(res) {
-        console.log(res)
+        console.log( "hi "+res)
         // location.reload();
     })
 })
